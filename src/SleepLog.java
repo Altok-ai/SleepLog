@@ -55,5 +55,5 @@ public class SleepLog {
     public void printInfo() {
         System.out.println(date + " | " + dayType + " | " + sleepMinutes + " мин | ояну: " + wakeUps);
     }
-}
+0""}
 
