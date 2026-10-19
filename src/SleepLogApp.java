@@ -4,7 +4,7 @@ public class SleepLogApp {
     public static void main(String[] args) {
         SleepLogLog log = new SleepLogLog();
 
-        // Өз деректеріңіз (кемінде 10 жазба)
+        // 11 шынайы жазба (минуттары нақты есептелген)
         log.addRecord("04.10", "демалыс", 498, 2);
         log.addRecord("05.10", "оқу күні", 402, 1);
         log.addRecord("06.10", "оқу күні", 483, 0);
@@ -13,9 +13,9 @@ public class SleepLogApp {
         log.addRecord("13.10", "оқу күні", 328, 0);
         log.addRecord("14.10", "демалыс", 510, 0);
         log.addRecord("15.10", "оқу күні", 264, 0);
-        log.addRecord("16.10", "демалыс", 510, 0);
+        log.addRecord("16.10", "демалыс", 510, 1);
         log.addRecord("17.10", "оқу күні", 452, 0);
-        log.addRecord("18.10", "демалыс", 497, 0);
+        log.addRecord("18.10", "демалыс", 497, 1);
 
         Scanner scanner = new Scanner(System.in);
         int choice = -1;
@@ -28,6 +28,7 @@ public class SleepLogApp {
             System.out.println("3 - Ең үлкен мәні бар жазба");
             System.out.println("4 - Ереже: ұйқы 420 минуттан (7 сағаттан) кем емес");
             System.out.println("5 - Сүзу: күн түрі бойынша");
+            System.out.println("6 - Өз функциям: орташадан ұзақ ұйқы");
             System.out.println("0 - Шығу");
             System.out.print("Таңдауыңыз: ");
 
@@ -51,6 +52,8 @@ public class SleepLogApp {
                 System.out.print("Күн түрін енгізіңіз (оқу күні / демалыс): ");
                 String text = scanner.nextLine();
                 log.printByCategory(text);
+            } else if (choice == 6) {
+                log.printAboveAverage();
             } else if (choice != 0) {
                 System.out.println("Мұндай пункт жоқ");
             }

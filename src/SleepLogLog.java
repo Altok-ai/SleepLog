@@ -83,4 +83,21 @@ public class SleepLogLog {
             System.out.println("Мұндай жазба табылмады");
         }
     }
+    public void printAboveAverage() {
+        int avg = getAverage();
+        System.out.println("Орташа ұйқы ұзақтығы: " + avg + " мин.");
+        System.out.println("Орташадан ұзақ ұйықтаған күндер тізімі:");
+        int found = 0;
+        int i = 0;
+        while (i < count) {
+            if (items[i].getSleepMinutes() > avg) {
+                items[i].printInfo();
+                found = found + 1;
+            }
+            i = i + 1;
+        }
+        if (found == 0) {
+            System.out.println("Орташадан ұзақ ұйықтаған күндер жоқ.");
+        }
+    }
 }
